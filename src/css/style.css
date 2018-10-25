@@ -1,0 +1,211 @@
+li,
+ul {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.wrapper {
+  /* width: 800px; */
+  height: 500px;
+  position: relative;
+  margin-left: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper svg{
+  width: 800px;
+  border: 1px solid cadetblue;
+}
+
+.d3-tip {
+  position: relative;
+  display: inline;
+  line-height: 1;
+  font-weight: 100;
+  padding: 3px;
+  font-size: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: '\25BC';
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+.dateWrapper {
+  margin: 20px;
+  display: block;
+}
+.dateWrapper form {
+  margin-bottom: 10px;
+}
+
+li.d {
+  display: block;
+  width: 20px;
+  float: left;
+}
+
+li.h {
+  list-style: none;
+  display: block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 1px solid rosybrown;
+}
+
+/*
+ * ph值等级
+ */
+.show_sta_ph_l li[sta_ph_l='Ⅰ'] {
+  background-color: #c8f54e;
+}
+
+.show_sta_ph_l li[sta_ph_l='Ⅱ'] {
+  background-color: #93e87d;
+}
+
+.show_sta_ph_l li[sta_ph_l='Ⅲ'] {
+  background-color: #68dc73;
+}
+
+.show_sta_ph_l li[sta_ph_l='Ⅳ'] {
+  background-color: #42be52;
+}
+
+.show_sta_ph_l li[sta_ph_l='Ⅴ'] {
+  background-color: #529a52;
+}
+
+.show_sta_ph_l li[sta_ph_l='劣Ⅴ'] {
+  background-color: #be1717;
+}
+
+
+/*
+ * do值等级【溶解氧级别】
+ */
+ .show_sta_do_l li[sta_do_l='Ⅰ'] {
+  background-color: #c8f54e;
+}
+
+.show_sta_do_l li[sta_do_l='Ⅱ'] {
+  background-color: #93e87d;
+}
+
+.show_sta_do_l li[sta_do_l='Ⅲ'] {
+  background-color: #68dc73;
+}
+
+.show_sta_do_l li[sta_do_l='Ⅳ'] {
+  background-color: #42be52;
+}
+
+.show_sta_do_l li[sta_do_l='Ⅴ'] {
+  background-color: #529a52;
+}
+
+.show_sta_do_l li[sta_do_l='劣Ⅴ'] {
+  background-color: #be1717;
+}
+
+/*
+ * an值等级【氨氮级别】
+ */
+ .show_sta_an_l li[sta_an_l='Ⅰ'] {
+  background-color: #0e0;
+}
+
+.show_sta_an_l li[sta_an_l='Ⅱ'] {
+  background-color: #cf6;
+}
+
+.show_sta_an_l li[sta_an_l='Ⅲ'] {
+  background-color: #fcc;
+}
+
+.show_sta_an_l li[sta_an_l='Ⅳ'] {
+  background-color: #f39;
+}
+
+.show_sta_an_l li[sta_an_l='Ⅴ'] {
+  background-color: #f00;
+}
+
+.show_sta_an_l li[sta_an_l='劣Ⅴ'] {
+  background-color: #be1717;
+}
+
+/*
+ * toc等级【高锰酸盐级别】
+ */
+ .show_sta_toc_l li[sta_toc_l='Ⅰ'] {
+  background-color: #c8f54e;
+}
+
+.show_sta_toc_l li[sta_toc_l='Ⅱ'] {
+  background-color: #93e87d;
+}
+
+.show_sta_toc_l li[sta_toc_l='Ⅲ'] {
+  background-color: #68dc73;
+}
+
+.show_sta_toc_l li[sta_toc_l='Ⅳ'] {
+  background-color: #42be52;
+}
+
+.show_sta_toc_l li[sta_toc_l='Ⅴ'] {
+  background-color: #529a52;
+}
+
+.show_sta_toc_l li[sta_toc_l='劣Ⅴ'] {
+  background-color: #be1717;
+}
+
+/*
+ * pp等级【总有机碳级别】
+ */
+ .show_sta_pp_l li[sta_pp_l='Ⅰ'] {
+  background-color: #c8f54e;
+}
+
+.show_sta_pp_l li[sta_pp_l='Ⅱ'] {
+  background-color: #93e87d;
+}
+
+.show_sta_pp_l li[sta_pp_l='Ⅲ'] {
+  background-color: #68dc73;
+}
+
+.show_sta_pp_l li[sta_pp_l='Ⅳ'] {
+  background-color: #42be52;
+}
+
+.show_sta_pp_l li[sta_pp_l='Ⅴ'] {
+  background-color: #529a52;
+}
+
+.show_sta_pp_l li[sta_pp_l='劣Ⅴ'] {
+  background-color: #be1717;
+}

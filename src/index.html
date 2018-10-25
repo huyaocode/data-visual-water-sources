@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="ie=edge"
+  >
+  <title>水源数据可视化</title>
+  <link
+    rel="stylesheet"
+    href="./css/style.css"
+  >
+</head>
+
+<body>
+  <div class="wrapper">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      id="svg"
+    >
+    </svg>
+    <div class="dateWrapper">
+
+      <form id="choose">
+        <input
+          type="radio"
+          name="type"
+          id="sta_ph_l"
+        />
+        <label for="sta_ph_l">PH值</label>
+        <input
+          type="radio"
+          name="type"
+          id="sta_do_l"
+        />
+        <label for="sta_do_l">溶解氧</label>
+        <input
+          type="radio"
+          name="type"
+          id="sta_an_l"
+        />
+        <label for="sta_an_l">氨氮</label>
+        <input
+          type="radio"
+          name="type"
+          id="sta_toc_l"
+        />
+        <label for="sta_toc_l">高锰酸盐</label>
+        <input
+          type="radio"
+          name="type"
+          id="sta_pp_l"
+        />
+        <label for="sta_pp_l">总有机碳</label>
+        
+      </form>
+
+      <ul
+        id="date"
+        class="day-list show_sta_pp_l"
+      >
+        <!-- <li class="d">
+              <ul>
+                <li
+                  class="h"
+                  sta_ph_l="Ⅰ"
+                ></li>
+              </ul>
+            </li> -->
+      </ul>
+    </div>
+
+  </div>
+
+  <script src="./d3.v3.js"></script>
+  <script src="./util.js"></script>
+  <script src="./d3.tips.js"></script>
+  <script src="./index.js"></script>
+  <script src="./scrollMap.js"></script>
+  <script src="./getdata.js"></script>
+</body>
+
+</html>
