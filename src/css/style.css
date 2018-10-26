@@ -1,12 +1,14 @@
 li,
-ul {
+ul, p {
   margin: 0;
   padding: 0;
-  line-height: 0;
+  list-style: none;
 }
 
+.title{
+  text-align: center;
+}
 .wrapper {
-  /* width: 800px; */
   height: 500px;
   position: relative;
   margin-left: 30px;
@@ -15,7 +17,7 @@ ul {
 }
 
 .wrapper svg{
-  width: 800px;
+  width: 700px;
   border: 1px solid cadetblue;
 }
 
@@ -49,15 +51,19 @@ ul {
   top: 100%;
   left: 0;
 }
-
+/*
+ **************************细节展示区**************************
+ */
 .dateWrapper {
-  margin: 20px;
-  display: block;
+  margin-left: 20px;
+  display: none;
 }
 .dateWrapper form {
   margin-bottom: 10px;
 }
-
+.day-list {
+  display: flex;
+}
 li.d {
   display: block;
   width: 20px;
@@ -73,28 +79,102 @@ li.h {
   box-sizing: border-box;
   border: 1px solid rosybrown;
 }
+div.dateblock {
+  display: flex;
+}
+
+div.dateblock ul.time{
+  /* position: absolute; */
+  width: 50px;
+  height: 120px;
+}
+ul.time>li {
+  display: block;
+  float: left;
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+}
+
+div.dateblock ul.colors{
+  width: 80px;
+  height: 120px;
+  margin-left: 5px;
+}
+ul.colors>li{
+  display: block;
+  float: left;
+  width: 80px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+}
+ul.colors span{
+  display: block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+ul.colors span.one{
+  background-color: #0e0
+}
+ul.colors span.two{
+  background-color: #cf6
+}
+ul.colors span.three{
+  background-color: #fcc
+}
+ul.colors span.four{
+  background-color: #f39
+}
+ul.colors span.five{
+  background-color: #f00
+}
+ul.colors span.six{
+  background-color: #be1717
+}
+
+div.water-detail {
+  height: 30px;
+  line-height: 30px;
+}
+
+#site-detail-str {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#choose{
+  margin-left: 50px;
+}
+
+/*
+ * ***************************************** 不同类型/不同程度的方块颜色 ******************************************
+ */
 
 /*
  * ph值等级
  */
 .show_sta_ph_l li[sta_ph_l='Ⅰ'] {
-  background-color: #c8f54e;
+  background-color: #0e0;
 }
 
 .show_sta_ph_l li[sta_ph_l='Ⅱ'] {
-  background-color: #93e87d;
+  background-color: #cf6;
 }
 
 .show_sta_ph_l li[sta_ph_l='Ⅲ'] {
-  background-color: #68dc73;
+  background-color: #fcc;
 }
 
 .show_sta_ph_l li[sta_ph_l='Ⅳ'] {
-  background-color: #42be52;
+  background-color: #f39;
 }
 
 .show_sta_ph_l li[sta_ph_l='Ⅴ'] {
-  background-color: #529a52;
+  background-color: #f00;
 }
 
 .show_sta_ph_l li[sta_ph_l='劣Ⅴ'] {
@@ -106,23 +186,23 @@ li.h {
  * do值等级【溶解氧级别】
  */
  .show_sta_do_l li[sta_do_l='Ⅰ'] {
-  background-color: #c8f54e;
+  background-color: #0e0;
 }
 
 .show_sta_do_l li[sta_do_l='Ⅱ'] {
-  background-color: #93e87d;
+  background-color: #cf6;
 }
 
 .show_sta_do_l li[sta_do_l='Ⅲ'] {
-  background-color: #68dc73;
+  background-color: #fcc;
 }
 
 .show_sta_do_l li[sta_do_l='Ⅳ'] {
-  background-color: #42be52;
+  background-color: #f39;
 }
 
 .show_sta_do_l li[sta_do_l='Ⅴ'] {
-  background-color: #529a52;
+  background-color: #f00;
 }
 
 .show_sta_do_l li[sta_do_l='劣Ⅴ'] {
@@ -159,24 +239,24 @@ li.h {
 /*
  * toc等级【高锰酸盐级别】
  */
- .show_sta_toc_l li[sta_toc_l='Ⅰ'] {
-  background-color: #c8f54e;
+.show_sta_toc_l li[sta_toc_l='Ⅰ'] {
+  background-color: #0e0;
 }
 
 .show_sta_toc_l li[sta_toc_l='Ⅱ'] {
-  background-color: #93e87d;
+  background-color: #cf6;
 }
 
 .show_sta_toc_l li[sta_toc_l='Ⅲ'] {
-  background-color: #68dc73;
+  background-color: #fcc;
 }
 
 .show_sta_toc_l li[sta_toc_l='Ⅳ'] {
-  background-color: #42be52;
+  background-color: #f39;
 }
 
 .show_sta_toc_l li[sta_toc_l='Ⅴ'] {
-  background-color: #529a52;
+  background-color: #f00;
 }
 
 .show_sta_toc_l li[sta_toc_l='劣Ⅴ'] {
@@ -187,23 +267,23 @@ li.h {
  * pp等级【总有机碳级别】
  */
  .show_sta_pp_l li[sta_pp_l='Ⅰ'] {
-  background-color: #c8f54e;
+  background-color: #0e0;
 }
 
 .show_sta_pp_l li[sta_pp_l='Ⅱ'] {
-  background-color: #93e87d;
+  background-color: #cf6;
 }
 
 .show_sta_pp_l li[sta_pp_l='Ⅲ'] {
-  background-color: #68dc73;
+  background-color: #fcc;
 }
 
 .show_sta_pp_l li[sta_pp_l='Ⅳ'] {
-  background-color: #42be52;
+  background-color: #f39;
 }
 
 .show_sta_pp_l li[sta_pp_l='Ⅴ'] {
-  background-color: #529a52;
+  background-color: #f00;
 }
 
 .show_sta_pp_l li[sta_pp_l='劣Ⅴ'] {

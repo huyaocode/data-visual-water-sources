@@ -19,6 +19,9 @@
 </head>
 
 <body>
+  <h1 class="title">
+      2015年1月地表水质量数据可视化
+  </h1>
   <div class="wrapper">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -26,65 +29,82 @@
       id="svg"
     >
     </svg>
-    <div class="dateWrapper">
-
-      <form id="choose">
-        <input
-          type="radio"
-          name="type"
-          id="sta_ph_l"
-        />
-        <label for="sta_ph_l">PH值</label>
-        <input
-          type="radio"
-          name="type"
-          id="sta_do_l"
-        />
-        <label for="sta_do_l">溶解氧</label>
-        <input
-          type="radio"
-          name="type"
-          id="sta_an_l"
-        />
-        <label for="sta_an_l">氨氮</label>
-        <input
-          type="radio"
-          name="type"
-          id="sta_toc_l"
-        />
-        <label for="sta_toc_l">高锰酸盐</label>
-        <input
-          type="radio"
-          name="type"
-          id="sta_pp_l"
-        />
-        <label for="sta_pp_l">总有机碳</label>
-        
-      </form>
-
-      <ul
-        id="date"
-        class="day-list show_sta_pp_l"
-      >
-        <!-- <li class="d">
-              <ul>
-                <li
-                  class="h"
-                  sta_ph_l="Ⅰ"
-                ></li>
-              </ul>
-            </li> -->
-      </ul>
+    <div class="dateWrapper" >
+        <div class="site-detail">
+            <p id = "site-detail-str"></p>
+          </div>
+          <!-- 选择表单 -->
+          <form id="choose">
+            <input
+              type="radio"
+              name="type"
+              id="sta_ph_l"
+            />
+            <label for="sta_ph_l">PH值</label>
+            <input
+              type="radio"
+              name="type"
+              id="sta_do_l"
+            />
+            <label for="sta_do_l">溶解氧</label>
+            <input
+              type="radio"
+              name="type"
+              id="sta_an_l"
+            />
+            <label for="sta_an_l">氨氮</label>
+            <input
+              type="radio"
+              name="type"
+              id="sta_toc_l"
+            />
+            <label for="sta_toc_l">高锰酸盐</label>
+            <input
+              type="radio"
+              name="type"
+              id="sta_pp_l"
+            />
+            <label for="sta_pp_l">总有机碳</label>
+    
+          </form>
+          <div class="dateblock">
+            <!-- 时间+格子+颜色 -->
+            <ul class="time">
+              <li>00:00</li>
+              <li>04:00</li>
+              <li>08:00</li>
+              <li>12:00</li>
+              <li>16:00</li>
+              <li>20:00</li>
+            </ul>
+            <ul
+              id="date"
+              class="day-list show_sta_pp_l"
+            >
+            </ul>
+            <!-- 颜色展示 -->
+            <ul class="colors">
+              <li><span class="one"></span>Ⅰ</li>
+              <li><span class="two"></span>Ⅱ</li>
+              <li><span class="three"></span>Ⅲ</li>
+              <li><span class="four"></span>Ⅳ</li>
+              <li><span class="five"></span>Ⅴ</li>
+              <li><span class="six"></span>劣Ⅴ</li>
+            </ul>
+          </div>
+          <!-- 每个格子的细节描述 -->
+          <div class="water-detail">
+            <p id = "detail-str"></p>
+          </div>
     </div>
-
   </div>
 
-  <script src="./d3.v3.js"></script>
-  <script src="./util.js"></script>
-  <script src="./d3.tips.js"></script>
-  <script src="./index.js"></script>
-  <script src="./scrollMap.js"></script>
-  <script src="./getdata.js"></script>
+  <script src="./js/d3.v3.js"></script>
+  <script src="./js/template.js"></script>
+  <script src="./js/util.js"></script>
+  <script src="./js/d3.tips.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/getdata.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,8 @@
-let siteData    //全局变量， 存放分类后的水源数据
+let siteData //全局变量， 存放分类后的水源数据
 
-/** 
+/**
  * 当数据加载完后会自动调用此函数
- * 
+ *
  * @param {*} mapData 中国地图
  * @param {*} siteInfo 站点信息
  * @param {*} waterData 站点收集的水源数据
@@ -14,7 +14,7 @@ function handleData(mapData, siteInfo, waterData) {
   siteData = classifyData(waterData, 'sta_id')
 }
 
-const width = 800
+const width = 700
 const height = 500
 
 /**
@@ -32,7 +32,7 @@ let projection = d3.geo
   .mercator()
   .center([107, 31])
   .scale(3900)
-  .translate([width / 2, height / 1.5])
+  .translate([width / 2.0, height / 1.5])
 
 /**
  * 绘制地图
@@ -90,8 +90,14 @@ function pointSite(root) {
     //调用展示细节函数
     .on('mousedown', function(d) {
       showWaterData(d)
-      const ppradio = document.getElementById('sta_pp_l');
+      const detailDOM = document.getElementsByClassName('dateWrapper')[0];
+      detailDOM.style.display = 'block'
+      //将总有机碳选项选上
+      const ppradio = document.getElementById('sta_pp_l')
       ppradio.setAttribute('checked', 'checked')
+      //展示站点细节
+      const siteDOM = document.getElementById('site-detail-str');
+      siteDOM.innerText = '水源位置：' + d.section;
     })
 }
 
@@ -101,9 +107,9 @@ function pointSite(root) {
 
 /**
  * 点击地图上的点
- * 
+ *
  * 展示站点数据
- * @param {*} site 
+ * @param {*} site
  */
 function showWaterData(site) {
   const data = siteData[site.code]
@@ -117,11 +123,11 @@ function showWaterData(site) {
     '08:00:00': {},
     '12:00:00': {},
     '16:00:00': {},
-    '20:00:00': {},
+    '20:00:00': {}
   }
   for (let i in data) {
     const date = data[i].sta_time.slice(0, 11)
-    
+
     if (date != t) {
       //存在新一天
       t = date
@@ -132,15 +138,15 @@ function showWaterData(site) {
       //为这一天添加6个时间点
       for (let t in tMap) {
         tMap[t] = {}
-        let hli = document.createElement('li')  //每个小时节点
+        let hli = document.createElement('li') //每个小时节点
         hli.setAttribute('class', 'h')
-        hli.setAttribute('time', t)
+        hli.onmouseover = showDetail
         dli.appendChild(hli)
-        tMap[t].ele = hli;
+        tMap[t].ele = hli
       }
     }
     const time = data[i].sta_time.slice(11)
-    for(let attr in data[i]) {
+    for (let attr in data[i]) {
       tMap[time] && tMap[time].ele.setAttribute(attr, data[i][attr])
     }
   }
@@ -150,8 +156,22 @@ function showWaterData(site) {
  * 点击单选框，展示不同数据
  */
 document.getElementById('choose').onclick = function(e) {
-  if(e.target.id) {
+  if (e.target.id) {
     let date = document.getElementById('date')
-    date.setAttribute('class' , 'day-list show_' + e.target.id)
+    date.setAttribute('class', 'day-list show_' + e.target.id)
   }
+}
+function showDetail(e) {
+  let attrs = e.target.attributes
+  let detailStr = ''
+  if (attrs.sta_id) {
+    detailStr = `${attrs.sta_time.value} PH值: ${
+      attrs.sta_ph_v.value
+    } 溶解氧: ${attrs.sta_do_v.value} 氨氮: ${attrs.sta_an_v.value} 高锰酸钾: ${
+      attrs.sta_toc_v.value
+    } 总有机碳: ${attrs.sta_pp_v.value}`
+  } else {
+    detailStr = ''
+  }
+  document.getElementById('detail-str').innerText = detailStr
 }
