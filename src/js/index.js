@@ -61,6 +61,7 @@ function pointSite(root) {
     .html(function(d) {
       return '<span>' + d.name + '</span>'
     })
+    
   svg.call(tip)
 
   svg
